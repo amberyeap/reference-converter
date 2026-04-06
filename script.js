@@ -29,3 +29,39 @@ Issue number (within brackets), followed by a colon - can skip for now
 Number of pages of the article, followed by a full stop
 */
 
+let listOfRef = [];
+
+function Journal(id, authors, year, articleTitle, journalTitle, publicationData, numPages) {
+	this.id = id;
+	this.authors = authors;
+	this.year = year;
+	this.articleTitle = articleTitle;
+	this.journalTitle = journalTitle;
+	this.publicationData = publicationData;
+	this.numPages = numPages;
+
+	// idea: this is to return an html of the reference in the correct format
+	this.display = function () {
+		return {
+
+		}
+	}
+}
+
+function addRefToList(authors, year, articleTitle, journalTitle, publicationData, numPages) {
+	const newJournal = new Journal(crypto.randomUUID(), authors, year, articleTitle, journalTitle, publicationData, numPages);
+
+	listOfRef.push(newJournal);
+}
+
+const submittedText = document.getElementById("input-apa-text");
+let originalText = "";
+
+submittedText.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+	const data = new FormData(submittedText);
+	originalText = data.get('apa-text');
+
+	processInput();
+})
