@@ -42,9 +42,9 @@ function Journal(id, authors, year, articleTitle, journalTitle, publicationData,
 
 	// idea: this is to return an html of the reference in the correct format
 	this.display = function () {
-		return {
-
-		}
+		return (
+			`${authors} ${year}. ${articleTitle}. ${journalTitle} ${publicationData}: ${numPages}.`
+		)
 	}
 }
 
@@ -52,6 +52,7 @@ function addRefToList(authors, year, articleTitle, journalTitle, publicationData
 	const newJournal = new Journal(crypto.randomUUID(), authors, year, articleTitle, journalTitle, publicationData, numPages);
 
 	listOfRef.push(newJournal);
+	console.log(listOfRef[0].display());
 }
 
 const submittedText = document.getElementById("input-apa-text");
@@ -65,3 +66,32 @@ submittedText.addEventListener('submit', (e) => {
 
 	processInput();
 })
+
+function processInput() {
+	const parts = originalText.match(/^(.*?)\s*\((\d{4})\)\.\s*(.*)$/);
+
+	const authors = parts[1];
+	const year = parts[2];
+	const remaining = parts[3]
+		.split(/[.]\s*/)
+		.map(s => s.trim())
+		.filter(s => s.length > 0);
+
+	const articleTitle = remaining[0] || "";
+	let journalInfo = remaining[1] || "";
+
+	const segments = journalInfo.split(/[,]\s*/); 
+	let journalTitle = segments[0];
+	let publicationData = "";
+	let numPages = "";
+
+	segments.slice(1).forEach(part => {
+		part = part.trim().replace(/\.$/, "");
+		if (/^\d+\(\d+\)$/.test(part))
+			publicationData = part;
+		else if (/^\d+[\-–—]\d+$/.test(part))
+			numPages = part;
+	});
+
+	addRefToList(authors, year, articleTitle, journalTitle, publicationData, numPages);
+}
