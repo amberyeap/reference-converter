@@ -43,7 +43,10 @@ function Journal(id, authors, year, articleTitle, journalTitle, publicationData,
 	// idea: this is to return an html of the reference in the correct format
 	this.display = function () {
 		return (
-			`${authors} ${year}. ${articleTitle}. ${journalTitle} ${publicationData}: ${numPages}.`
+			// `${authors} ${year}. ${articleTitle}. ${journalTitle} ${publicationData}: ${numPages}.`
+			`<div class="ref" data-id=${id}>
+				<p>${authors} ${year}. ${articleTitle}. <i>${journalTitle}</i> ${publicationData}: ${numPages}.</p>
+			</div>`
 		)
 	}
 }
@@ -65,6 +68,7 @@ submittedText.addEventListener('submit', (e) => {
 	originalText = data.get('apa-text');
 
 	processInput();
+	displayList(listOfRef);
 })
 
 function processInput() {
@@ -94,4 +98,13 @@ function processInput() {
 	});
 
 	addRefToList(authors, year, articleTitle, journalTitle, publicationData, numPages);
+}
+
+function displayList(listOfRef) {
+	let html = '';
+
+	listOfRef.forEach(ref => {
+		html += ref.display();
+	})
+	document.getElementById("list-of-ref").innerHTML = html;
 }
