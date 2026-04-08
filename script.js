@@ -29,6 +29,10 @@ Issue number (within brackets), followed by a colon - can skip for now
 Number of pages of the article, followed by a full stop
 */
 
+/* BUG: 
+- if the format matches then the program doesn't run
+*/
+
 let listOfRef = [];
 
 function Journal(id, authors, year, articleTitle, journalTitle, publicationData, numPages) {
@@ -114,3 +118,7 @@ function displayList(listOfRef) {
 	})
 	document.getElementById("list-of-ref").innerHTML = html;
 }
+
+/*
+Azmi Sharom. (2005). What is a University? Reclaiming human, intellectual and national resources from mediocrity. Off The Edge Dec, 8-9 
+*/
