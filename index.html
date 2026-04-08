@@ -9,15 +9,32 @@
 	<script src="script.js" defer></script>
 </head>
 <body>
-	<h1>Reference/Citation Converter</h1>
+	<h1 class="title">Reference/Citation Converter</h1>
 
-	<form id="input-apa-text">
-		<label for="apa-text">Input here</label>
-		<input type="text" id="apa-text" name="apa-text">
-		<button type="submit">Submit</button>
-	</form>
+	<div class="content">
+		<div class="left-container">
+			<form id="input-apa-text">
+				<label class="input-label" for="apa-text">Input here</label>
+				<input type="text" id="apa-text" name="apa-text" placeholder="Doe, J. (2026). Sleep is not a bad thing.">
+				<button type="submit">Submit</button>
+			</form>
 
-	<div id="list-of-ref">
+			<div class="instructions">
+				<h2>How to use:</h2>
+				<p><i>Note: This website is still in early development</i></p>
+				<ol>
+					<li>Input your APA-style reference into the box</li>
+					<li>Click 'Submit'</li>
+					<li>The converted text will appear on the right</li>
+					<li>Copy the converted text and paste it in your document!</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="display">
+			<h2>Converted Reference:</h2>
+			<div id="list-of-ref"></div>
+		</div>
 	</div>
 
 </body>
