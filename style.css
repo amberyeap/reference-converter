@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', Calibri, sans-serif;
+}
+
+.title {
+	text-align: center;
+	margin: 32px;
+}
+
+/* CONTENT BOX - FORM AND DISPLAY */
+.content {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+/* INPUT AND INSTRUCTIONS */
+.left-container {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-left: 32px;
+}
+
+/* INPUT SECTION */
+#input-apa-text {
+	display: flex;
+	flex-direction: column;
+	/* gap: 16px; */
+	border: 2px red solid;
+}
+
+.input-label {
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+#apa-text {
+	width: 100%;
+	height: 50px;
+	font-size: 16px;
+	text-align: center;
+	text-wrap: wrap;
+}
+
+#input-apa-text button {
+	align-self: flex-start;
+	padding: 5px 12px;
+	margin-top: 8px;
+	cursor: pointer;
+}
+
