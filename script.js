@@ -102,8 +102,14 @@ function processInput() {
 
 function displayList(listOfRef) {
 	let html = '';
+	const sortedList = [...listOfRef].sort((a, b) => {
+		const authorCompare = a.authors.localeCompare(b.authors);
+		if (authorCompare !== 0)
+			return authorCompare;
+		return Number(a.year) - Number(b.year);
+	})
 
-	listOfRef.forEach(ref => {
+	sortedList.forEach(ref => {
 		html += ref.display();
 	})
 	document.getElementById("list-of-ref").innerHTML = html;
