@@ -53,15 +53,28 @@ body {
 	width: 100%;
 	height: 50px;
 	font-size: 16px;
-	text-align: center;
 	text-wrap: wrap;
 }
 
-#input-apa-text button {
-	align-self: flex-start;
-	padding: 5px 12px;
+button {
+	padding: 6px 12px;
 	margin-top: 8px;
 	cursor: pointer;
+
+	background-color: #4a90e2;
+	color: #fff;
+	font-weight: bold;
+	font-size: 15px;
+	border: none;
+	border-radius: 5px;
+}
+
+button:hover {
+	background-color: #206CC6;
+}
+
+button:active {
+	background-color: #4a90e2;
 }
 
 /* INSTRUCTIONS SECTION */
