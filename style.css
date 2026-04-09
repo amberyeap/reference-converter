@@ -28,7 +28,6 @@ body {
 	flex-direction: column;
 	gap: 16px;
 	flex: 1;
-	margin-left: 32px;
 	max-width: 500px;
 }
 
@@ -46,7 +45,7 @@ body {
 }
 
 .input-label {
-	font-size: 24px;
+	font-size: 16px;
 	font-weight: 600;
 	margin-bottom: 8px;
 }
@@ -56,11 +55,15 @@ body {
 	height: 50px;
 	font-size: 16px;
 	text-wrap: wrap;
+	padding-left: 8px;
+
+	border: 1px solid #ccc;
+	border-radius: 8px;
 }
 
 button {
 	padding: 6px 12px;
-	margin-top: 8px;
+	margin-top: 16px;
 	cursor: pointer;
 
 	background-color: #4a90e2;
