@@ -128,4 +128,11 @@ ol, ul {
 	border-radius: 8px;
 	background-color: #f0f4ff;
 	border: 1px dashed #4a90e2;
+
+	padding: 15px;
+	margin-top: 10px;
+}
+
+.ref {
+	margin-bottom: 12px;
 }
