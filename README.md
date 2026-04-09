@@ -9,13 +9,12 @@ This project takes APA-style references and reformats it to meet Malaysia's Nati
 Since the project is still in the very early development stage, the features are very limited.
 
 - Converts a single APA reference into UKM format
+- Sorts the converted references alphabetically based on authors' names, then by year
 
 ## Planned Features
 - Multiple references
-- Alphabetical sort
 - Edit and manage a saved reference list
 - Copy-to-clipboard button
-- Improved UI
 - and more...
 
 ## Usage
