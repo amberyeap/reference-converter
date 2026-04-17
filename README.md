@@ -1,4 +1,4 @@
-# Academic Reference Reformatter
+# Academic Reference Converter
 This project takes APA-style references and reformats it to meet Malaysia's National University (UKM)'s citation format.
 
 ## [Demo](https://reference-convert.vercel.app/)
